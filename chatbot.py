@@ -4,7 +4,7 @@ import os
 
 
 st.set_page_config(layout='wide', page_title='GPT-3 chatbot')
-openai.api_key = OPENAI_API_KEY
+openai.api_key = st.secrets["OPENAI_API_KEY"]
 
 
 def get_text():
