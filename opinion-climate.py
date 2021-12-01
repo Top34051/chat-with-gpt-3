@@ -10,10 +10,8 @@ import datetime
 
 st.set_page_config(layout='wide', page_title='GPT-3 chatbot')
 
-# openai.api_key = st.secrets["OPENAI_API_KEY"]
-# mongodb_uri = st.secrets["MONGODB_URI"]
-openai.api_key = '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'
-mongodb_uri = 'mongodb+srv://admin:kQ1qRs8R7MP4RaYk@cluster0.vvzo0.mongodb.net/survey-data?retryWrites=true&w=majority'
+openai.api_key = st.secrets["OPENAI_API_KEY"]
+mongodb_uri = st.secrets["MONGODB_URI"]
 
 response_limit = [6, 10, 12]
 
