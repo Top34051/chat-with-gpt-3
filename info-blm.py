@@ -144,7 +144,7 @@ def main():
 
   st.title('GPT-3 chatbot')
 
-  instruction_text = 'Your goal is to **find out the information** with GPT-3 about two topics: **climate change** and **Black Lives Matter**.'
+  instruction_text = 'Your goal is to **find out the information** with GPT-3 about **black lives matter**.'
   st.info(instruction_text)
 
   chat_history = st.empty()
