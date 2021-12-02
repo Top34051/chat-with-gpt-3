@@ -197,7 +197,7 @@ def main():
     
     survey_id = st.session_state['survey_id']
     st.success(f'''
-      **Survey completed!** Thank you for chatting with GPT-3! \n
+      **Chat completed!** Thank you for chatting with GPT-3! \n
       Please return to the survey page and paste this verification code: **{survey_id}**. 
       You can now close this page if you have submitted this code in survey.
     ''')
