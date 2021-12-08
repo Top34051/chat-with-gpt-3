@@ -6,6 +6,7 @@ import string
 import pymongo
 from pymongo import MongoClient
 import datetime
+import json
 
 
 st.set_page_config(layout='wide', page_title='GPT-3 chatbot')
@@ -203,9 +204,10 @@ def main():
     ''')
 
     # update database
+    database = json.load("database.json")
     cluster = MongoClient(mongodb_uri)
-    db = cluster['survey-data']
-    collection = db['test']
+    db = cluster[database['database']]
+    collection = db[database['collection']]
 
     if not st.session_state['submitted']:
       collection.insert_one({
