@@ -204,7 +204,7 @@ def main():
     ''')
 
     # update database
-    database = json.load("database.json")
+    database = json.load(open('database.json'))
     cluster = MongoClient(mongodb_uri)
     db = cluster[database['database']]
     collection = db[database['collection']]
