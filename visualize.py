@@ -5,7 +5,7 @@ import pandas as pd
 
 st.set_page_config(layout='wide', page_title='GPT-3 chatbot')
 
-mongodb_uri = st.secrets["MONGODB_URI"]
+db_endpoint = st.secrets["db_endpoint"]
 
 
 @st.cache
@@ -17,12 +17,13 @@ def convert_df(df):
 def init():
 
     if 'document' not in st.session_state:
-        cluster = MongoClient(mongodb_uri)
+        cluster = MongoClient(db_endpoint)
         database = json.load(open('database.json'))
         db = cluster[database['database']]
         collection = db[database['collection']]
         documents = collection.find({})
         st.session_state['document'] = [document for document in documents]
+        st.session_state['collection_name'] = database['collection']
 
     if 'document_csv' not in st.session_state:
         st.session_state['document_csv'] = pd.DataFrame(
@@ -37,7 +38,8 @@ if __name__ == '__main__':
     st.sidebar.download_button(
         label='Download all data',
         data=csv,
-        file_name='pilot-survey.csv',
+        file_name='survey-data-{}.csv'.format(
+            st.session_state['collection_name']),
         mime='text/csv'
     )
 

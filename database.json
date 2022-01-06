@@ -1,4 +1,5 @@
 {
-  "database": "survey-data", 
-  "collection": "pilot-test"
+  "database": "survey-data",
+  "collection": "pilot-jan-5",
+  "available_collections": ["pilot-test", "pilot-jan-5"]
 }
