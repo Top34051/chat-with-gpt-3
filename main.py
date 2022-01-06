@@ -20,7 +20,7 @@ def main():
 
     # Show information
     st.title('GPT-3 chatbot')
-    st.info('Your goal is to **find out the information** with GPT-3 about **black lives matter**.')
+    st.info('Your goal is to **AAA** with GPT-3 about **BBB**.')
 
     # Show chat history
     st.text_area(
@@ -64,7 +64,7 @@ def main():
     show_finish_status()
 
     # Submit survey to database if finished
-    submit_to_database()
+    submit_to_database('main')
 
 
 if __name__ == '__main__':
