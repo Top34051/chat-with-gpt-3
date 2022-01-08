@@ -89,6 +89,10 @@ def get_response(user_input):
     if st.session_state['survey_finished']:
         return None
 
+    # Preliminary hello input
+    if user_input in ['Hello', 'hello', 'Hello!', 'Hi', 'hi', 'HI', 'Hi!']:
+        return 'Hello! I am the AI assistant. What can I do for you today?'
+
     # Get response from gpt-3
     response = request_response(user_input)
     return response
