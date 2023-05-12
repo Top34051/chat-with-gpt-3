@@ -1,0 +1,5 @@
+{
+  "database": "survey-data",
+  "collection": "test",
+  "available_collections": ["test", "pilot-test", "pilot-jan-5", "pilot-feb-1"]
+}
